@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Proyectos\Universidad\GitHub\Dani_repos\neumoco\neumoco\project\AERNode\neumoco_aernode\ED_OF_robot_control_TOP.ncd
+OUTFILE=D:\Proyectos\Universidad\GitHub\Dani_repos\neumoco\neumoco\project\AERNode\neumoco_aernode\ED_OF_robot_control_TOP.bit
+FAMILY=Spartan6
+PART=xc6slx150t-3fgg484
+WORKINGDIR=D:\Proyectos\Universidad\GitHub\Dani_repos\neumoco\neumoco\project\AERNode\neumoco_aernode
+LICENSE=ISE
+USER_INFO=201065467_209426030_210633023_405

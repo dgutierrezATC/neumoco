@@ -1,0 +1,104 @@
+############################################################################
+# External clock & external reset
+############################################################################
+
+# External clock
+NET "i_ext_clock"  LOC = "ab13" ;
+
+# External reset button
+NET "i_ext_reset"  LOC = "A20"; 
+NET "i_ext_reset" CLOCK_DEDICATED_ROUTE = FALSE ;
+
+############################################################################
+# Input from DVS
+############################################################################
+## AER_IN ##
+# 1 | 3 | 5 | 7 | 9 | 11 | 13 | 15 #
+#   |   |   |   |   |    |    |    #
+# 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 #
+
+# DVS AER bus signals
+#NET i_dvs_aer_data<14> LOC=M21 | IOSTANDARD = LVCMOS33; #AER_IN_0(wired version)
+#NET i_dvs_aer_data<12> LOC=K22 | IOSTANDARD = LVCMOS33; #AER_IN_1(wired version)
+#NET i_dvs_aer_data<10> LOC=J22 | IOSTANDARD = LVCMOS33; #AER_IN_2(wired version)
+#NET i_dvs_aer_data<8> LOC=H21 | IOSTANDARD = LVCMOS33; #AER_IN_3(wired version)
+#NET i_dvs_aer_data<6> LOC=F22 | IOSTANDARD = LVCMOS33; #AER_IN_4(wired version)
+#NET i_dvs_aer_data<4> LOC=E22 | IOSTANDARD = LVCMOS33; #AER_IN_5(wired version)
+#NET i_dvs_aer_data<2> LOC=D21 | IOSTANDARD = LVCMOS33; #AER_IN_6(wired version)
+#NET i_dvs_aer_data<0> LOC=B22 | IOSTANDARD = LVCMOS33; #AER_IN_7(wired version)
+#NET i_dvs_aer_data<1> LOC=B21 | IOSTANDARD = LVCMOS33; #AER_IN_8(wired version)
+#NET i_dvs_aer_data<3> LOC=C22 | IOSTANDARD = LVCMOS33; #AER_IN_9(wired version)
+#NET i_dvs_aer_data<5> LOC=D22 | IOSTANDARD = LVCMOS33; #AER_IN_10(wired version)
+#NET i_dvs_aer_data<7> LOC=F21 | IOSTANDARD = LVCMOS33; #AER_IN_11(wired version)
+#NET i_dvs_aer_data<9> LOC=G22 | IOSTANDARD = LVCMOS33; #AER_IN_12(wired version)
+#NET i_dvs_aer_data<11> LOC=H22 | IOSTANDARD = LVCMOS33; #AER_IN_13(wired version)
+#NET i_dvs_aer_data<13> LOC=K21 | IOSTANDARD = LVCMOS33; #AER_IN_14(wired version)
+#NET i_dvs_aer_data<15> LOC=L22 | IOSTANDARD = LVCMOS33;# | PULLUP; #AER_IN_15(wired version)
+#
+## DVS AER protocol signals
+#NET i_dvs_aer_req LOC=N20 | PULLUP | IOSTANDARD = LVCMOS33; #E20 primera y N20 version B??
+#NET o_dvs_aer_ack LOC=Y21 | IOSTANDARD = LVCMOS33;
+
+NET i_dvs_aer_data<0> LOC=M21 | IOSTANDARD = LVCMOS33; #AER_IN_0(wired version)
+NET i_dvs_aer_data<1> LOC=K22 | IOSTANDARD = LVCMOS33; #AER_IN_1(wired version)
+NET i_dvs_aer_data<2> LOC=J22 | IOSTANDARD = LVCMOS33; #AER_IN_2(wired version)
+NET i_dvs_aer_data<3> LOC=H21 | IOSTANDARD = LVCMOS33; #AER_IN_3(wired version)
+NET i_dvs_aer_data<4> LOC=F22 | IOSTANDARD = LVCMOS33; #AER_IN_4(wired version)
+NET i_dvs_aer_data<5> LOC=E22 | IOSTANDARD = LVCMOS33; #AER_IN_5(wired version)
+NET i_dvs_aer_data<6> LOC=D21 | IOSTANDARD = LVCMOS33; #AER_IN_6(wired version)
+NET i_dvs_aer_data<7> LOC=B22 | IOSTANDARD = LVCMOS33; #AER_IN_7(wired version)
+NET i_dvs_aer_data<8> LOC=B21 | IOSTANDARD = LVCMOS33; #AER_IN_8(wired version)
+NET i_dvs_aer_data<9> LOC=C22 | IOSTANDARD = LVCMOS33; #AER_IN_9(wired version)
+NET i_dvs_aer_data<10> LOC=D22 | IOSTANDARD = LVCMOS33; #AER_IN_10(wired version)
+NET i_dvs_aer_data<11> LOC=F21 | IOSTANDARD = LVCMOS33; #AER_IN_11(wired version)
+NET i_dvs_aer_data<12> LOC=G22 | IOSTANDARD = LVCMOS33; #AER_IN_12(wired version)
+NET i_dvs_aer_data<13> LOC=H22 | IOSTANDARD = LVCMOS33; #AER_IN_13(wired version)
+NET i_dvs_aer_data<14> LOC=K21 | IOSTANDARD = LVCMOS33; #AER_IN_14(wired version)
+NET i_dvs_aer_data<15> LOC=L22 | IOSTANDARD = LVCMOS33; #AER_IN_15(wired version)
+
+# DVS AER protocol signals
+NET i_dvs_aer_req LOC=N20 | PULLUP | IOSTANDARD = LVCMOS33; #E20 primera y N20 version B??
+NET o_dvs_aer_ack LOC=Y21 | IOSTANDARD = LVCMOS33;
+
+############################################################################
+# AER - SpiNNaker interface
+############################################################################
+
+# From AER to SpiNNaker
+NET "o_data_out_to_spinnaker<0>"  LOC = "F1" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<1>"  LOC = "F2" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<2>"  LOC = "E1" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<3>"  LOC = "D1" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<4>"  LOC = "D2" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<5>"  LOC = "C1" | IOSTANDARD = LVCMOS33;
+NET "o_data_out_to_spinnaker<6>"  LOC = "B1" | IOSTANDARD = LVCMOS33;
+
+NET "i_ack_out_from_spinnaker"  LOC = "H1"; # | pulldown;
+
+# From SpiNNaker to AER
+NET "i_data_in_from_spinnaker<0>"  LOC = "N1" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<1>"  LOC = "M1" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<2>"  LOC = "M2" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<3>"  LOC = "L1" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<4>"  LOC = "K1" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<5>"  LOC = "K2" | IOSTANDARD = LVCMOS33;
+NET "i_data_in_from_spinnaker<6>"  LOC = "J1" | IOSTANDARD = LVCMOS33;
+
+NET "o_ack_in_to_spinnaker"  LOC = "G1" | IOSTANDARD = LVCMOS33; # | pulldown;
+
+NET "o_spinn_ui_status_active" LOC = "F20" | IOSTANDARD = LVCMOS33; #active
+NET "o_spinn_ui_status_reset" LOC = "N22" | IOSTANDARD = LVCMOS33; #reset
+NET "o_spinn_ui_status_dump" LOC = "R22" | IOSTANDARD = LVCMOS33; #dump
+NET "o_spinn_ui_status_error" LOC = "G20" | IOSTANDARD = LVCMOS33; #error
+
+############################################################################
+# Output to motors
+############################################################################
+## GP_1 ##
+#2:VDD | 4:RIGHT MOTOR	| 6:LEFT MOTOR	  | 8:xx		     | 10:xx  #
+#	    |						|				 	  |				  |   	  #
+#1:GND | 3:xx 				| 5:xx 			  | 7:xx 		  | 9:xx   #
+
+# Motor PWM signals
+NET "o_pwm_signal_left_motor" LOC = "C19" | IOSTANDARD = LVCMOS33;
+NET "o_pwm_signal_right_motor" LOC = "F17" | IOSTANDARD = LVCMOS33;
