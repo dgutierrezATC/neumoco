@@ -1,0 +1,108 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml ED_OF_robot_control_TOP.twx ED_OF_robot_control_TOP.ncd -o
+ED_OF_robot_control_TOP.twr ED_OF_robot_control_TOP.pcf
+
+Design file:              ED_OF_robot_control_TOP.ncd
+Physical constraint file: ED_OF_robot_control_TOP.pcf
+Device,package,speed:     xc6slx150t,fgg484,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock i_ext_clock
+---------------------------+------------+------------+------------+------------+------------------+--------+
+                           |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source                     | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+---------------------------+------------+------------+------------+------------+------------------+--------+
+i_ack_out_from_spinnaker   |   -0.043(R)|      FAST  |    1.262(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<0>|    0.425(R)|      FAST  |    0.872(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<1>|    0.418(R)|      FAST  |    0.879(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<2>|    0.418(R)|      FAST  |    0.879(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<3>|    0.417(R)|      FAST  |    0.880(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<4>|    0.427(R)|      FAST  |    0.870(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<5>|    0.427(R)|      FAST  |    0.870(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_data_in_from_spinnaker<6>|    0.429(R)|      FAST  |    0.868(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<0>          |    2.097(R)|      SLOW  |   -1.158(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<1>          |    2.690(R)|      SLOW  |   -0.984(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<2>          |    2.740(R)|      SLOW  |   -1.049(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<3>          |    2.542(R)|      SLOW  |   -0.874(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<4>          |    2.453(R)|      SLOW  |   -0.143(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<5>          |    2.391(R)|      SLOW  |    0.015(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<6>          |    2.650(R)|      SLOW  |   -0.543(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<8>          |    4.392(R)|      SLOW  |   -2.317(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<9>          |    2.925(R)|      SLOW  |   -1.596(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<10>         |    1.612(R)|      SLOW  |   -0.505(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<11>         |    1.782(R)|      SLOW  |   -0.222(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<12>         |    1.317(R)|      SLOW  |   -0.351(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<13>         |    2.436(R)|      SLOW  |   -0.932(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<14>         |    2.644(R)|      SLOW  |   -1.399(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_data<15>         |    2.385(R)|      SLOW  |   -1.290(R)|      SLOW  |i_ext_clock_BUFGP |   0.000|
+i_dvs_aer_req              |    0.529(R)|      FAST  |    0.768(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+i_ext_reset                |    9.387(R)|      SLOW  |   -3.966(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+---------------------------+------------+------------+------------+------------+------------------+--------+
+
+Clock i_ext_clock to Pad
+--------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+                          |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination               |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+--------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+o_ack_in_to_spinnaker     |         9.549(R)|      SLOW  |         5.364(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<0>|         9.712(R)|      SLOW  |         5.503(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<1>|         9.622(R)|      SLOW  |         5.424(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<2>|         9.395(R)|      SLOW  |         5.308(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<3>|         9.991(R)|      SLOW  |         5.645(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<4>|         9.673(R)|      SLOW  |         5.462(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<5>|        12.806(R)|      SLOW  |         7.341(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_data_out_to_spinnaker<6>|        12.677(R)|      SLOW  |         7.246(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_dvs_aer_ack             |        11.823(R)|      SLOW  |         6.698(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_pwm_signal_left_motor   |        11.201(R)|      SLOW  |         6.407(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_pwm_signal_right_motor  |        10.165(R)|      SLOW  |         5.682(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_spinn_ui_status_active  |         8.555(R)|      SLOW  |         4.700(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_spinn_ui_status_dump    |        10.222(R)|      SLOW  |         5.774(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_spinn_ui_status_error   |        11.580(R)|      SLOW  |         6.738(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+o_spinn_ui_status_reset   |        12.518(R)|      SLOW  |         7.288(R)|      FAST  |i_ext_clock_BUFGP |   0.000|
+--------------------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock i_ext_clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+i_ext_clock    |   10.965|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue Mar 22 00:49:13 2022 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4749 MB
+
+
+
