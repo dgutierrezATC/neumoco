@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -83,6 +83,9 @@ architecture Behavioral of ED_pair_motor_control is
 	signal duty_value_right : std_logic_vector(8 downto 0);
 	-- Load signal for right PWM generator
 	signal new_duty_value_right : std_logic;
+	
+	--
+	signal i_event_address_shifted : STD_LOGIC_VECTOR (15 downto 0);
 
 	begin
 	
@@ -133,10 +136,15 @@ architecture Behavioral of ED_pair_motor_control is
 		--
 		process(i_new_event_address, i_event_address)
 		begin
+			i_event_address_shifted <= std_logic_vector(shift_left(unsigned(i_event_address), 1));
+		end process;
+		
+		process(i_new_event_address, i_event_address)
+		begin
 			if(i_new_event_address = '1') then
-				if(i_event_address(8) = '1') then
+				if(i_event_address(7) = '1') then
 					-- Right
-					duty_value_right <= '0' & i_event_address(7 downto 0);
+					duty_value_right <= '0' & '0' & i_event_address_shifted(6 downto 0);
 					new_duty_value_right <= '1';
 					-- Left
 					duty_value_left <= (others => '0');
@@ -146,7 +154,7 @@ architecture Behavioral of ED_pair_motor_control is
 					duty_value_right <= (others => '0');
 					new_duty_value_right <= '0';
 					-- Left
-					duty_value_left <= '0' & i_event_address(7 downto 0);
+					duty_value_left <= '0' & '0' & i_event_address_shifted(6 downto 0);
 					new_duty_value_left <= '1';
 				end if;
 			else
