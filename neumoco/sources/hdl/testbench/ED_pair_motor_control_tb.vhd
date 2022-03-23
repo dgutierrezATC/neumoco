@@ -97,16 +97,19 @@ BEGIN
 		i_reset <= '1';
 
       wait for 200 ms;
+		
+		wait until rising_edge(i_clock);
+		wait for i_clock_period;
 
-      -- insert stimulus here 
---		i_event_address <= "0000000011111111";
+--      -- insert stimulus here 
+--		i_event_address <= "0000000000000001";
 --		i_new_event_address <= '1';
 --		wait for i_clock_period;
 --		i_new_event_address <= '0';
 --		
 --		wait for 200 ms;
 --		
---		i_event_address <= "0000000100000000";
+--		i_event_address <= "0000000000100000";
 --		i_new_event_address <= '1';
 --		wait for i_clock_period;
 --		i_new_event_address <= '0';
@@ -126,9 +129,9 @@ BEGIN
 --		i_new_event_address <= '0';
 --		
 --		wait for 1000 ms;
-
+--
 		-- For loop to test the PWM generator
-		 for t_angle in 250 to 260 loop
+		 for t_angle in 0 to 260 loop
 			
 			 v_inevent := t_angle;
 			 i_event_address <= std_logic_vector(to_unsigned(v_inevent, i_event_address'length));
@@ -139,8 +142,8 @@ BEGIN
 
 			 wait for 100 ms;
 		 end loop;
-		
-      wait;
-   end process;
+
+        wait;
+     end process;
 
 END;
