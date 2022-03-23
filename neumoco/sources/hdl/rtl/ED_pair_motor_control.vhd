@@ -144,7 +144,7 @@ architecture Behavioral of ED_pair_motor_control is
 			if(i_new_event_address = '1') then
 				if(i_event_address(7) = '1') then
 					-- Right
-					duty_value_right <= '0' & '0' & i_event_address_shifted(6 downto 0);
+					duty_value_right <= '0' & std_logic_vector(shift_left(unsigned(i_event_address(7 downto 0)), 1));--i_event_address_shifted(6 downto 0);
 					new_duty_value_right <= '1';
 					-- Left
 					duty_value_left <= (others => '0');
@@ -154,7 +154,7 @@ architecture Behavioral of ED_pair_motor_control is
 					duty_value_right <= (others => '0');
 					new_duty_value_right <= '0';
 					-- Left
-					duty_value_left <= '0' & '0' & i_event_address_shifted(6 downto 0);
+					duty_value_left <= '0' & std_logic_vector(shift_left(unsigned(i_event_address(7 downto 0)), 1));--i_event_address_shifted(6 downto 0);
 					new_duty_value_left <= '1';
 				end if;
 			else
